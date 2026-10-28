@@ -1,0 +1,58 @@
+
+<div class="page">
+  <div class="stopwatch-card">
+
+    <div class="top-label">
+      <span class="status-dot" [class.active]="isRunning"></span>
+      {{ isRunning ? 'TIMER RUNNING' : 'READY TO FOCUS' }}
+    </div>
+
+    <div class="clock-icon">◷</div>
+
+    <h1>Stopwatch</h1>
+    <p class="subtitle">Every second counts.</p>
+
+    <div class="timer-display">
+      <span>{{ displayTime }}</span>
+    </div>
+
+    <div class="time-labels">
+      <span>HOURS</span>
+      <span>MINUTES</span>
+      <span>SECONDS</span>
+    </div>
+
+    <div class="controls">
+      <button
+        type="button"
+        class="btn-start"
+        (click)="start()"
+        [disabled]="isRunning">
+        <span>▶</span> Start
+      </button>
+
+      <button
+        type="button"
+        class="btn-stop"
+        (click)="stop()"
+        [disabled]="!isRunning">
+        <span>Ⅱ</span> Stop
+      </button>
+
+      <button
+        type="button"
+        class="btn-reset"
+        (click)="reset()">
+        ↻
+      </button>
+    </div>
+
+    <div class="bottom-info">
+      <span>● Precision time tracking</span>
+      <span>{{ isRunning ? 'In progress' : 'Paused' }}</span>
+    </div>
+
+  </div>
+
+  <!-- <p class="footer-text">FOCUS ON WHAT MATTERS ✦</p> -->
+</div>
